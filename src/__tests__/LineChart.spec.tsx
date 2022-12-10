@@ -1,10 +1,9 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { App } from './App';
+import LineChart from '../LineChart';
 
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  render(<LineChart />)
+  const linkElement = screen.getByText(/wykres/i);
   expect(linkElement).toBeInTheDocument();
 });
