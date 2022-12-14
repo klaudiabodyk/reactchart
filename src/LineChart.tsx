@@ -24,52 +24,54 @@ ChartJS.register(
   Legend
 );
 const App = () => {
+
   const [historyLabels, setHistoryLabel] = useState(['']);
   const [EURbuyLabel, setEURbuyLabel] = useState(['']);
   const [EURsellLabel, setEURsellLabel] = useState(['']);
   const [USDbuyLabel, setUSDbuyLabel] = useState(['']);
   const [USDsellLabel, setUSDsellLabel] = useState(['']);
   const [dateLabel, setDateLabel] = useState(['']);
-  //const [timeLabel, setTimeLabel] = useState(['']);
-  
  
     d3.csv(history).then(function(loadedData: any ) { 
 
       for (let i=0; i < loadedData.length; i++) {
-        //console.log(loadedData[i]);
 
-        let date_time = loadedData[i].date_time;
+        const date_time = loadedData[i].date_time;
         historyLabels.push(date_time);
         setHistoryLabel(historyLabels);
 
-        let data = loadedData[i].time;
+        const data = loadedData[i].date_time;
         dateLabel.push(data);
         setDateLabel(dateLabel);
 
-        let EURbuy = loadedData[i].EURbuy;
+        const EURbuy = loadedData[i].EURbuy;
         EURbuyLabel.push(EURbuy);
         setEURbuyLabel(EURbuyLabel);
-        console.log(EURbuyLabel)
 
-        let EURsell = loadedData[i].EURsell;
+        const EURsell = loadedData[i].EURsell;
         EURsellLabel.push(EURsell);
         setEURsellLabel(EURsellLabel);
 
-        let USDbuy = loadedData[i].USDbuy;
+        const USDbuy = loadedData[i].USDbuy;
         USDbuyLabel.push(USDbuy);
         setUSDbuyLabel(USDbuyLabel);
 
-        let USDsell = loadedData[i].USDsell;
+        const USDsell = loadedData[i].USDsell;
         USDsellLabel.push(USDsell);
         setUSDsellLabel(USDsellLabel);
 
     }
 });
+
+EURbuyLabel.shift();
+EURsellLabel.shift();
+USDbuyLabel.shift();
+USDsellLabel.shift();
+
 const labels: string[] = dateLabel;
   
 const dataEURO = {
   labels,
-
   datasets: [
     {
       label: 'Euro - BUY',
@@ -93,23 +95,23 @@ const dataUSD = {
     {
       label: 'Dolar - BUY',
       data: USDbuyLabel,
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderColor: 'rgb(239, 144, 33)',
+      backgroundColor: 'rgba(239, 144, 33, 0.5)',
     
     },
     {
       label: 'Dolar - SELL',
       data: USDsellLabel,
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      borderColor: 'rgb(102, 102, 153)',
+      backgroundColor: 'rgba(102, 102, 153, 0.5)',
     },
   ],
 };
 
     return ( 
       <>
-      <Line id='euro' options={optionsEURO} data={dataEURO} />
-      <Line id='usd' options={optionsUSD} data={dataUSD} />
+      <Line id='euro' options={optionsEURO} data={dataEURO} updateMode={'none'} />
+      <Line id='usd' options={optionsUSD} data={dataUSD} updateMode={'none'} />
       </>
         );
     
