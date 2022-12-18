@@ -7,7 +7,7 @@ export const optionsEURO = {
       },
       title: {
         display: true,
-        text: 'Wykres kursu euro',
+        text: 'Wykres kursu euro - wybierz dane, które mają zostać wyświetlone',
       },
     },
   };
@@ -20,7 +20,7 @@ export const optionsEURO = {
       },
       title: {
         display: true,
-        text: 'Wykres kursu dolara',
+        text: 'Wykres kursu dolara - wybierz dane, które mają zostać wyświetlone',
       },
     },
   };

@@ -78,6 +78,7 @@ const dataEURO = {
       data: EURbuyLabel,
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      hidden: true,
     
     },
     {
@@ -85,6 +86,7 @@ const dataEURO = {
       data: EURsellLabel,
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      hidden: true,
     },
   ],
 };
@@ -97,6 +99,7 @@ const dataUSD = {
       data: USDbuyLabel,
       borderColor: 'rgb(239, 144, 33)',
       backgroundColor: 'rgba(239, 144, 33, 0.5)',
+      hidden: true,
     
     },
     {
@@ -104,6 +107,7 @@ const dataUSD = {
       data: USDsellLabel,
       borderColor: 'rgb(102, 102, 153)',
       backgroundColor: 'rgba(102, 102, 153, 0.5)',
+      hidden: true,
     },
   ],
 };
